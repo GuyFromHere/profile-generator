@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        background-color: blue;
+        color: white;
+        text-align: center;
+      }
+
+      .imageContainer {
+        border: 2px solid red;
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      li {
+        float: left;
+        list-style-type: none;
+      }
+
+      .main {
+        text-align: center;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        margin: auto 0;
+      }
+
+      .card {
+        height: 100px;
+        width: 200px;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="highlight header">
+      <div class="imageContainer">
+        <img src="https://github.com/GuyFromHere.png" />
+      </div>
+      <h1>Hi!</h1>
+      <h1>My name is Dan Dismuke!</h1>
+      <h4>Status here</h4>
+      <ul class="headerLinks">
+        <li>Location</li>
+        <li>
+          <a href="https://github.com/GuyFromHere" target="_blank"
+            >GitHub Profile</a
+          >
+        </li>
+        <li>Blog</li>
+      </ul>
+    </div>
+    <div class="main">
+      <span class="bio">Bio here</span>
+      <div class="row">
+        <div class="highlight card">GitHub Repositories</div>
+        <div class="highlight card">GitHub Stars</div>
+      </div>
+      <div class="row">
+        <div class="highlight card">Followers</div>
+        <div class="highlight card">Following</div>
+      </div>
+    </div>
+  </body>
+</html>
