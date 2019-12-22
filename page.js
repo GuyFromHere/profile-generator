@@ -1,4 +1,33 @@
+const colors = {
+    green: {
+        wrapperBackground: "#E6E1C3",
+        headerBackground: "#C1C72C",
+        headerColor: "black",
+        photoBorderColor: "#black"
+    },
+    blue: {
+        wrapperBackground: "#5F64D3",
+        headerBackground: "#26175A",
+        headerColor: "white",
+        photoBorderColor: "#73448C"
+    },
+    pink: {
+        wrapperBackground: "#879CDF",
+        headerBackground: "#FF8374",
+        headerColor: "white",
+        photoBorderColor: "#FEE24C"
+    },
+    red: {
+        wrapperBackground: "#DE9967",
+        headerBackground: "#870603",
+        headerColor: "white",
+        photoBorderColor: "white"
+    }
+};
 
+
+function page(data) {
+    return `
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -25,7 +54,7 @@
          height: 100%;
          }
          .wrapper {
-         background-color: #DE9967;
+         background-color: ${colors[data.color].wrapperBackground};
          padding-top: 100px;
          }
          body {
@@ -67,8 +96,8 @@
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: #870603;
-         color: white;
+         background-color: ${colors[data.color].headerBackground};
+         color: ${colors[data.color].headerColor};
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -79,7 +108,7 @@
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid white;
+         border: 6px solid ${colors[data.color].photoBorderColor};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -122,8 +151,8 @@
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: #870603;
-           color: white;
+           background-color: ${colors[data.color].headerBackground};
+           color: ${colors[data.color].headerColor};
            margin: 20px;
          }
          
@@ -150,8 +179,8 @@
                 <div class="container">
                     <div class="wrapper">
                         <div class="photo-header">
-                        <h1>GuyFromHere</h1>
-                            <img href="https://github.com/GuyFromHere.png">
+                        <h1>${data.username}</h1>
+                            <img href="${data.pic}">
                         </div>
                     </div>
                     <div class="row">
@@ -161,4 +190,10 @@
             </main>
         </body>
     </html>
-      
+      `
+}
+
+module.exports = {
+    colors: colors,
+    page: page
+}
