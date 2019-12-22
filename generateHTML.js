@@ -25,6 +25,7 @@ const colors = {
     }
 };
 
+
 function generateHTML(data) {
     return `
 <!DOCTYPE html>
@@ -176,7 +177,49 @@ function generateHTML(data) {
       <body>
             <div class="main">
                 <div class="container">
-                    <h1>${data.login}</h1>
+                    <div class="wrapper">
+                        <div class="photo-header">
+                            <img src="${data.pic}">
+                            <h2>Hi!</h2>
+                            <h2>My name is ${data.name}</h2>
+                            <h3>Currently @ ${data.company}.</h3>
+                        </div>
+                        <div class="links-nav">
+                            <div class="nav-link">
+                                <a href="#">Location</a>
+                            </div>
+                            <div class="nav-link">
+                                <a href="#">GitHub</a>
+                            </div>
+                            <div class="nav-link">
+                                <a href="#">Blog</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h1>${data.bio}</h1>
+                    <div class="row">
+                        <div class="card col">
+                            <h4>Public Repositories</h4>
+                            ${data.publicRepos}
+                        </div>
+
+                        <div class="card col">
+                            <h4>Followers</h4>
+                            ${data.followers}
+                        </div>
+
+                        <div class="card col">
+                            <h4>GitHub Stars</h4>
+                            ${data.starred}
+                        </div>
+
+                        <div class="card col">
+                            <h4>Following</h4>
+                            ${data.following}
+                        </div>
+
+                    </div>
                 </div>
             </main>
         </body>
@@ -184,4 +227,7 @@ function generateHTML(data) {
       `
 }
 
-modules.export('generateHTML')
+module.exports = {
+    colors: colors,
+    generateHTML: generateHTML
+}
