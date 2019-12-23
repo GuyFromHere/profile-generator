@@ -234,6 +234,5 @@ function generateHTML(data) {
 }
 
 module.exports = {
-  colors: colors,
   generateHTML: generateHTML
 };
