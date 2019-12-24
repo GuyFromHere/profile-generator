@@ -1,3 +1,7 @@
+const maps_api = require("./api.js").maps_api;
+const mapsUrlStart = "https://maps.googleapis.com/maps/api/staticmap?center=";
+const mapsUrlEnd = "&zoom=14&size=400x400&key=" + maps_api;
+
 const colors = {
   green: {
     wrapperBackground: "#E6E1C3",
@@ -182,9 +186,10 @@ function generateHTML(data) {
                 <h4>Currently @ ${data.company}.</h4>
                 <div class="links-nav">
                     <div class="nav-link">
-                        <a href="${
-                          data.location
-                        }" target="_blank"><i class="fas fa-location-arrow"></i>&nbsp;Location</a>
+                        <a href="${mapsUrlStart}${
+    data.location
+  }${mapsUrlEnd}" target="_blank">
+                        <i class="fas fa-location-arrow"></i>&nbsp;Location</a>
                     </div>
                     <div class="nav-link">
                         <a href="${
