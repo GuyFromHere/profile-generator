@@ -6,7 +6,6 @@ const generateHTML = require("./generateHTML.js").generateHTML;
 const puppeteer = require("puppeteer");
 const maps_api = require("./api.js").maps_api;
 
-console.log(maps_api);
 const questions = [
   {
     type: "input",
